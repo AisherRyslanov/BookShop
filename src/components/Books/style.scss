@@ -1,0 +1,108 @@
+.books {
+  &__title {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      font-weight: 500;
+      font-size: 48px;
+      text-align: center;
+      color: #19272E;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      text-align: center;
+      color: #818EEA;
+      margin-top: 20px;
+    }
+  }
+
+  &__anyBooks {
+    padding: 80px 0;
+
+    h1 {
+      font-weight: 700;
+      font-size: 18px;
+      color: #19272E;
+      width: 200px;
+    }
+    p{
+      font-weight: 400;
+      font-size: 16px;
+      color: #19272E;
+    }
+  }
+
+
+}
+
+
+@media (max-width: 1440px) {
+
+}
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 1024px) {
+  .books__title {
+    width: 1100px;
+  }
+  .books__anyBooks {
+    padding: 80px 15px;
+  }
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+  .books__title {
+    width: 1000px;
+  }
+}
+@media (max-width: 576px) {
+  .books__anyBooks {
+    width: 1150px;
+  }
+}
+@media (max-width: 450px) {
+  .books__anyBooks {
+    margin-left: 15px;
+    padding: 80px 95px;
+    width: 933px;
+  }
+}
+@media (max-width: 414px) {
+
+}
+@media (max-width: 400px) {
+  .books__title h1 {
+    margin-left: 40px;
+  }
+  .books__anyBooks {
+    width: 999px;
+  }
+}
+@media (max-width: 380px) {
+  .books__anyBooks {
+    width: 1040px;
+  }
+}
+@media (max-width: 375px) {
+  .books__anyBooks {
+    width: 1060px;
+  }
+}
+@media (max-width: 360px) {
+  .books__anyBooks {
+    width: 915px;
+  }
+}
+@media (max-width: 320px) {
+  .books__anyBooks {
+    padding: 80px 55px;
+  }
+
+}

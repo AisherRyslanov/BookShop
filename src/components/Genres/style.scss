@@ -1,0 +1,39 @@
+#genres {
+  padding-top: 50px;
+  .text{
+    h1 {
+      font-weight: 500;
+      font-size: 48px;
+      color: #19272E;
+      display: flex;
+      flex-direction: column;
+      padding: 15px 0;
+    }
+  }
+  .genres {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--bg {
+      width: 150px;
+      height: 150px;
+      background: #F5F5F5;
+      border: 1px solid #E1E1E1;
+      border-radius: 16px;
+
+      &__img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h1 {
+          font-weight: 500;
+          font-size: 18px;
+          color: #19272E;
+        }
+      }
+    }
+  }
+}
