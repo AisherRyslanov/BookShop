@@ -9,12 +9,21 @@ import Book6 from '../../img/book6.png'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import {NavLink} from "react-router-dom";
+
+
 const Genres = () => {
     return (
         <>
             <div id="genres">
                 <div className="container">
-                    <div className="text"><h1>Genres</h1></div>
+                    <div className="text">
+
+                        <h1>Genres</h1>
+                      <NavLink to={"/books"}>
+                          <h2>View all</h2>
+                      </NavLink>
+                    </div>
 
                     <div className="genres">
 
