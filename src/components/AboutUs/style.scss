@@ -33,3 +33,34 @@
     }
   }
 }
+
+
+@media (max-width: 1440px) {
+  .container{
+    width: 90%;
+  }
+}
+@media (max-width: 970px) {
+  #aboutUs{
+    .aboutUs{
+      display: flex;
+      flex-direction: column;
+      &--photo{
+        &__img{
+          Width: 400px;
+          Height: 440px;
+        }
+      }
+      &--desc{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p h3{
+          width: 400px;
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+

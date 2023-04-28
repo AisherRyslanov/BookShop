@@ -12,6 +12,38 @@ const Header = () => {
     return (
         <div id="header">
             <div className="container">
+                <div className="header">
+                    <div className="header--title .active">
+                        <NavLink to={"/"}>
+                            Bookshop
+                        </NavLink>
+                        <div className="header--nav">
+
+                            <NavLink to={"/genres"}>
+                                Categories
+                            </NavLink>
+                            <NavLink to={"/NewBooks"}>
+                                Recent
+                            </NavLink>
+                            <NavLink to={"/books"}>
+                                Books
+                            </NavLink>
+                            <NavLink to={"/aboutUs"}>
+                                About Us
+                            </NavLink>
+                        </div>
+                    </div>
+
+
+                    <div className="search-box">
+                        <input className="search-txt" type="text" placeholder="Type to search"/>
+                        <a className="search-btn" href="#"> <BsSearch className=""/></a>
+                        <div className="header--search">
+                            <BsSearch className="header--search__first"/>
+                            <NavLink to={"/DetailBooks"}>
+                                <RiShoppingBagLine className="header--search__bag"/>
+
+                            </NavLink>
                  <div className="header">
                    <div className="header--title">
                          <NavLink to={"/bookShop"}>
