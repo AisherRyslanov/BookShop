@@ -6,7 +6,9 @@ import Book3 from '../../img/book3.png'
 import Book4 from '../../img/book4.png'
 import Book5 from '../../img/book5.png'
 import Book6 from '../../img/book6.png'
-
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 const Genres = () => {
     return (
         <>
@@ -15,6 +17,7 @@ const Genres = () => {
                     <div className="text"><h1>Genres</h1></div>
 
                     <div className="genres">
+
                         <div className="genres--bg">
                             <div className="genres--bg__img">
                                 <img src={Book1} alt=""/>

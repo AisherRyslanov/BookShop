@@ -83,3 +83,50 @@
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  #books .books {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    padding: 20px 0;
+    //margin: 0 -15px;
+    scroll-snap-type: x mandatory;
+  }
+
+  #books .books--new,
+  #books .books--new2,
+  #books .books--two {
+    flex: 0 0 auto;
+    margin: 0 15px;
+    width: 70%;
+    scroll-snap-align: start;
+  }
+
+  #books .books--new h2,
+  #books .books--new2 h2,
+  #books .books--two__two2 h1 {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+  }
+
+  #books .books--new h4,
+  #books .books--new2 h4,
+  #books .books--two__two2 h4 {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  #books .books--new img,
+  #books .books--new2 img,
+  #books .books--two__two2 img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+  }
+}
