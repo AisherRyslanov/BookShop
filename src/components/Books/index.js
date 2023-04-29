@@ -24,14 +24,20 @@ const Books = () => {
     }, [])
 
     const settings = {
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 3
-
-
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2            }
+            }
+        ]
     };
+
 
 
     return (
