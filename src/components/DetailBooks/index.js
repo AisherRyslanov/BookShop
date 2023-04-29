@@ -8,6 +8,7 @@ import React, {useState} from "react";
 const DetailBooks = () => {
     const [remove, setRemove] = useState(false)
 
+
     return (
         <div id='detail'>
             <div className="container">
