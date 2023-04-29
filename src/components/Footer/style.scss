@@ -115,8 +115,10 @@
       }
     }
 
+
   }
 }
+
 @media (max-width: 730px) {
   #footer {
     .footer {
@@ -176,7 +178,7 @@
               font-size: 20px;
               color: #FFFFFF;
               padding: 10px 0;
-              letter-spacing: 1px ;
+              letter-spacing: 1px;
             }
 
             h2 {
@@ -209,12 +211,14 @@
     }
   }
 }
+
 @media (max-width: 1000px) {
   #footer {
     .footer {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+
       &--sing {
         flex-wrap: wrap;
         text-align: center;
@@ -262,7 +266,7 @@
               font-size: 20px;
               color: #FFFFFF;
               padding: 10px 0;
-              letter-spacing: 1px ;
+              letter-spacing: 1px;
             }
 
             h2 {

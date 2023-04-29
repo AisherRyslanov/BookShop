@@ -24,13 +24,19 @@ const Books = () => {
     }, [])
 
     const settings = {
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 3
-
-
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
     };
 
 
@@ -44,11 +50,13 @@ const Books = () => {
                 <div className="books__anyBooks">
                     <Slider {...settings}>
                         {books.map((item) => (
-                            <div key={item.id}>
+                            <>
+                            <Link to={`/DetailPage/${item.id}`} key={item.id}>
                                 <img src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
-                                <h2>{item.volumeInfo.title}</h2>
-                                <p>{item.volumeInfo.authors}</p>
-                            </div>
+                            </Link>
+                            <h2>{item.volumeInfo.title}</h2>
+                            <p>{item.volumeInfo.authors}</p>
+                            </>
                         ))}
                     </Slider>
                 </div>

@@ -13,7 +13,7 @@ const BooksPage = () => {
 
     const getBooks = async () => {
         try {
-            const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=code+complete`)
+            const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=code+complete&maxResults=9`)
             const {data} = await response
             setBooks(data.items)
 
@@ -26,7 +26,6 @@ const BooksPage = () => {
         getBooks()
     }, [])
 
-    // const btn =
 
 
     const settings = {
@@ -62,7 +61,11 @@ const BooksPage = () => {
                 </div>
                 <div className="booksPage__second">
                     <div className="booksPage__second--main">
-                        <button>Sort By <span>Popular</span> <HiOutlineArrowSmDown/></button>
+                        <select>
+                            <option value="">Sort By <span>Popular</span> <HiOutlineArrowSmDown/></option>
+                            <option value="">new</option>
+                            <option value="">old</option>
+                        </select>
                         <button onClick={() => {
                             toggleBlock()
                         }} className='booksPage__second--main__set'><GoSettings/></button>
@@ -79,61 +82,62 @@ const BooksPage = () => {
                 </div>
                 <div className="booksPage__fourth">
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>Autographed Books</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>Sci-Fi</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>For kids</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>For teenagers</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>Finance</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>Detective</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>Romantic</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>Psychology</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>Self-Improvement</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>Educational</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>Literature</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
-                        <img src={Checkbox} alt=""/>
+                        <input type="checkbox"/>
                         <h3>Religion</h3>
                     </div>
 
                 </div>
                 <div className="booksPage__fifth">
 
-
                     {books.map((item) => (
                         <div key={item.id}>
-                            <img src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
+                            <Link to={`/DetailPage/${item.id}`}>
+                                <img src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
+                            </Link>
                             <h2>{item.volumeInfo.title}</h2>
                             <p>{item.volumeInfo.authors}</p>
                         </div>
@@ -155,51 +159,51 @@ const BooksPage = () => {
                             <Slider {...settings}>
 
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>Autographed Books</h3>
                                 </div>
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>Sci-Fi</h3>
                                 </div>
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>For kids</h3>
                                 </div>
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>For teenagers</h3>
                                 </div>
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>Finance</h3>
                                 </div>
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>Detective</h3>
                                 </div>
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>Romantic</h3>
                                 </div>
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>Psychology</h3>
                                 </div>
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>Self-Improvement</h3>
                                 </div>
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>Educational</h3>
                                 </div>
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>Literature</h3>
                                 </div>
                                 <div className="booksPage__filters--blok">
-                                    <input type="radio" src={Checkbox} alt=""/>
+                                    <input type="checkbox"/>
                                     <h3>Religion</h3>
                                 </div>
 
