@@ -19,6 +19,8 @@ const Header = () => {
                         <NavLink to={"/"}>
                             Bookshop
                         </NavLink>
+                        <div className="header--nav">
+
                         <NavLink to={"/genres"}>
                             Categories
                         </NavLink>
@@ -31,10 +33,12 @@ const Header = () => {
                         <NavLink to={"/aboutUs"}>
                             About Us
                         </NavLink>
+                        </div>
                     </div>
                     <nav className="header--search">
                         <div style={{
-                            background: search ? 'transparent' : ''
+                            background: search ? 'transparent' : '',
+                            marginTop: -4
                         }} className='header--search__icon'>
 
                             <BsSearch onClick={() => setSearch(!search)} className="header--search__icon--bs"/>
@@ -43,6 +47,9 @@ const Header = () => {
                                 width: search ? '' : '120px'
                             }} text="text"/>
                         </div>
+                            <NavLink to={"/DetailBooks"}>
+                                <RiShoppingBagLine className="header--title__bag"/>
+                            </NavLink>
                     </nav>
 
                     {/*<div className="search-box">*/}
@@ -50,6 +57,14 @@ const Header = () => {
                     {/*    <a className="search-btn" href="#"> <BsSearch className=""/></a>*/}
                     {/*</div>*/}
 
+
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Header;
                     <NavLink to={"/DetailBooks"}>
                         <RiShoppingBagLine className="header--title__bag"/>
                     </NavLink>
