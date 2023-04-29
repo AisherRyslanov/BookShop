@@ -1,3 +1,5 @@
+// import React, {useState} from 'react';
+// import "./style.scss"
 import React, {useState} from 'react';
 import "./style.scss"
 import {BsSearch} from "react-icons/bs";
@@ -63,3 +65,14 @@ const Header = () => {
 };
 
 export default Header;
+                    <NavLink to={"/DetailBooks"}>
+                        <RiShoppingBagLine className="header--title__bag"/>
+                    </NavLink>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Header;
+
