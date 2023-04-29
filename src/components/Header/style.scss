@@ -33,13 +33,13 @@
       &__bag{
         font-size: 23px;
         color: #19272E;
+        margin-left: 50px;
       }
     }
     &--search{
       display: flex;
       justify-content: end;
       align-items: center;
-      width: 40%;
       color: black;
       &__icon{
         margin-right: -18%;
@@ -70,6 +70,72 @@
 
   }
 }
+
+
+@media (max-width: 768px) {
+    #header {
+      .header {
+        &--title {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          .header--nav {
+            display: none;
+          }
+        }
+        &--search {
+          display: none;
+        }
+      }
+      .search-box {
+        display: none;
+      }
+    }
+  }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #header {
+      .header {
+        &--title {
+          display: flex;
+        }
+        &--search {
+          top: -14%;
+          right: 3%;
+        }
+      }
+      .search-box {
+        top: -20%;
+        right: 10%;
+      }
+    }
+
+  }
+
+@media (min-width: 1025px) {
+    #header {
+      .header {
+        &--title {
+          gap: 32px;
+          flex-direction: row;
+          align-items: center;
+          .header--nav {
+            display: flex;
+          }
+        }
+        &--search {
+          top: -24%;
+          right: 8%;
+        }
+      }
+      .search-box {
+        top: -24%;
+        right: 8%;
+      }
+    }
+  }
+
+
 
 
 //#header{
