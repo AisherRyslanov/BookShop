@@ -17,7 +17,7 @@ const Genres = () => {
                     <div className="text">
 
                         <h1>Genres</h1>
-                      <NavLink to={"/books"}>
+                      <NavLink to={"/BookPage"}>
                           <h2>View all</h2>
                       </NavLink>
                     </div>

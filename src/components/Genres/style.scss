@@ -47,6 +47,8 @@
   }
 }
 
+
+
 @media (max-width: 950px) {
 
   #genres {
@@ -86,6 +88,110 @@
           h1 {
             font-weight: 500;
             font-size: 18px;
+            color: #19272E;
+          }
+        }
+      }
+    }
+  }
+
+}
+@media (max-width: 768px) {
+
+  #genres {
+    padding-top: 50px;
+
+    .text {
+      h1 {
+        font-weight: 500;
+        font-size: 32px;
+        color: #19272E;
+        display: flex;
+        flex-direction: column;
+        padding: 15px 0;
+      }
+      h2{
+        font-size: 18px;
+      }
+    }
+
+    .genres {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 20px 0;
+      &--bg {
+        width: 150px;
+        height: 150px;
+        background: #F5F5F5;
+        border: 1px solid #E1E1E1;
+        border-radius: 16px;
+        margin-right: 20px;
+
+        &__img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          img{
+            width: 100px;
+            height: 100px;
+          }
+
+          h1 {
+            font-weight: 500;
+            font-size: 16px;
+            color: #19272E;
+          }
+        }
+      }
+    }
+  }
+
+}
+@media (max-width: 576px) {
+
+  #genres {
+    padding-top: 50px;
+
+    .text {
+      h1 {
+        font-weight: 400;
+        font-size: 24px;
+        color: #19272E;
+        display: flex;
+        flex-direction: column;
+        padding: 15px 0;
+      }
+      h2{
+        font-size: 16px;
+      }
+    }
+
+    .genres {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+
+      &--bg {
+        width: 150px;
+        height: 150px;
+        background: #F5F5F5;
+        border: 1px solid #E1E1E1;
+        border-radius: 16px;
+        margin-right: 20px;
+
+        &__img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+
+          h1 {
+            font-weight: 500;
+            font-size: 14px;
             color: #19272E;
           }
         }
