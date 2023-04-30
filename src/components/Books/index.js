@@ -33,7 +33,6 @@ const Books = () => {
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 2            }
                     slidesToShow: 2
                 }
             }
@@ -54,7 +53,7 @@ const Books = () => {
                         {books.map((item) => (
                             <>
                             <Link to={`/DetailPage/${item.id}`} key={item.id}>
-                                <img src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
+                                <img width="100%" src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
                             </Link>
                             <h2>{item.volumeInfo.title}</h2>
                             <p>{item.volumeInfo.authors}</p>

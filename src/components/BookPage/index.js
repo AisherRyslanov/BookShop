@@ -3,17 +3,16 @@ import './style.scss'
 import {Link, NavLink} from "react-router-dom";
 import {HiOutlineArrowSmDown} from "react-icons/hi";
 import axios from "axios";
-import Checkbox from '../../img/Checkbox Off.png'
 import Slider from "react-slick";
 import {GoSettings} from "react-icons/go";
 
-const BooksPage = () => {
+const BooksPage = async () => {
 
     const [books, setBooks] = useState([])
 
     const getBooks = async () => {
         try {
-            const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=code+complete&maxResults=9`)
+            const response = await axios.get(`https://books9.p.rapidapi.com/authors/8418015/works`)
             const {data} = await response
             setBooks(data.items)
 

@@ -184,8 +184,8 @@
   }
 
   .slick-slide img {
-    max-height: 200px;
-    display: block;
+    //max-height: 200px;
+    //display: block;
   }
 
   .slick-slide h2 {
@@ -206,8 +206,8 @@
     padding: 0 25px;
   }
   img{
-    width: 100px;
-    height: 100px;
+    //width: 100px;
+    //height: 100px;
   }
   .slick-list{
     margin-left: 20px;
@@ -221,7 +221,8 @@
       font-size: 14px;
       width: 120px;
     }
-    p{
+
+    p {
       font-size: 12px;
     }
   }
@@ -244,8 +245,8 @@
   }
 
   .slick-slide img {
-    max-height: 150px;
-    gap: 20px;
+    //max-height: 150px;
+    //gap: 20px;
   }
 
   .slick-slide h2 {
@@ -258,9 +259,8 @@
 
   .slick-dots {
     bottom: -20px;
-=======
-
-
+  }
+}
 @media (max-width: 1440px) {
 
 }
