@@ -1,14 +1,18 @@
 import './style.scss'
 import './media.scss'
-import Boy from '../../img/boy.png'
-import Art from '../../img/art.png'
-import Harry from '../../img/harry.png'
+
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {AiOutlineRightCircle} from "react-icons/ai";
 
 const DetailBooks = () => {
     const [remove, setRemove] = useState(false)
     const [books, setBooks] = useState([])
+    const [select, setSelect] = useState(false)
+    // const [count, setCount] = useState(0);
+    // const [price, setPrice] = useState(0)
+    // const [quantity , setQuantity] = useState(1)
+
 
     const getBooks = async () => {
         try {
@@ -24,7 +28,12 @@ const DetailBooks = () => {
     useEffect(() => {
         getBooks()
     }, [])
-
+ // const increment = (setCount,setPrice) =>{
+ //     setQuantity(quantity +1)
+ // }
+ // const decrement = (setCount,setPrice) =>{
+ //     setQuantity(quantity -1)
+ // }
 
     return (
         <div id='detail'>
@@ -42,8 +51,8 @@ const DetailBooks = () => {
                     <div className="detail" style={{display: remove ? 'none' : ''}}>
 
                         <div className='detail--wrap'>
-                            <div className="detail--wrap__block " style={{display: remove ? 'none' : ''}}>
-                                <img src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
+                            <div className="detail--wrap__block" style={{display: remove ? 'none' : ''}}>
+                                <img  width="30%"  src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
                                 <div className="detail--wrap__block--content">
                                     <div className="detail--wrap__block--content__texty">
                                         <h1>THE BOY, THE MOLE, THE FOX AND THE HORSE</h1>
@@ -60,7 +69,7 @@ const DetailBooks = () => {
                             </div>
                             <hr/>
                             <div className="detail--wrap__block">
-                                <img src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
+                                <img  width="30%"  src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
                                 <div className="detail--wrap__block--content">
                                     <div className="detail--wrap__block--content__texty">
                                         <h1>THE SUBTLE ART OF NOT GIVING A F*CK</h1>
@@ -77,7 +86,7 @@ const DetailBooks = () => {
                             </div>
                             <hr/>
                             <div className="detail--wrap__block">
-                                <img src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
+                                <img width="30%" src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
 
                                 <div className="detail--wrap__block--content">
                                     <div className="detail--wrap__block--content__texty">
@@ -100,25 +109,69 @@ const DetailBooks = () => {
                         <div className="detail--select">
                             <h1>Order Summary</h1>
 
-                            <div className="detail--select__met">
-                                <h3>Shipping</h3>
-                                <select>
-                                    <option>Select Method</option>
-                                    <option>Select Method</option>
-                                    <option>Select Method</option>
-                                    <option>Select Method</option>
-                                </select>
+                            <div className="detail--select__shipping">
+                             <details>
+                                 <div style={{
+                                     display: "flex",
+                                     flexDirection: "column"
+                                 }}>
+
+                                     <input type="text" placeholder="Your address"/>
+                                     <input type="number" placeholder="Your phone number"/>
+                                     <button className="detail--select__shipping--send">Send</button>
+                                 </div>
+                                 <summary>
+                                     <p>SHIPPING</p>
+                                     <h5 className="h5">Select Method <AiOutlineRightCircle
+                                     onClick={() => setSelect(!select)}
+                                     style={{
+                                         transform: select ? '' : "rotate(90deg)"
+                                     }}
+                                     /></h5>
+                                 </summary>
+                             </details>
                             </div>
-                            <div className="detail--select__met">
-                                <h3>Payment</h3>
-                                <select>
-                                    <option>Select Method</option>
-                                    <option>Select Method</option>
-                                    <option>Select Method</option>
-                                    <option>Select Method</option>
-                                </select>
+                            <div className="detail--select__shipping" >
+                                <details>
+                                    <div style={{
+                                        display: "flex",
+                                        flexDirection: "column"
+                                    }}>
+                                        <select>
+                                            <option>OPTIMA BANK</option>
+                                            <option>KEREMET BANK</option>
+                                            <option>BAKAI BANK</option>
+                                            <option>RSK BANK</option>
+                                        </select>
+                                        <input type="number" placeholder="Your card number"/>
+                                        <input type="text" placeholder="Name on card"/>
+                                        <div style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "space-between",
+                                        }}>
+                                            <input className="detail--select__shipping--code__in1" style={{
+                                                width: "30%",
+
+                                            }}  type="text" placeholder="ММ/ГГ"/>
+                                            <input  className="detail--select__shipping--code__in2" style={{
+                                                width: "30%"
+                                            }}  type="text" placeholder="CVV/CVC"/>
+                                        </div>
+                                    </div>
+                                    <summary>
+                                        <p>PAYMENT</p>
+                                        <h5 className="h5">Select Method <AiOutlineRightCircle
+                                            onClick={() => setSelect(!select)}
+                                            style={{
+                                                transform: select ? '' : "rotate(90deg)"
+                                            }}
+                                        /></h5>
+                                    </summary>
+                                </details>
                             </div>
-                            <hr/>
+
+
 
                             <div className="detail--select__total">
                                 <h1>Total</h1>
