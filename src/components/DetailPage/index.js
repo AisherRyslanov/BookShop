@@ -59,7 +59,7 @@ const DetailPage = () => {
                         <p className='detailMain__info--desc'>Description: {book.volumeInfo.description}</p>
 
                         <h3 className='detailMain__info--price'>$ {price}</h3>
-                        <div className="">
+                        <div className="detailMain__info--display">
                             <Link to="/DetailBooks">
                                 <button className='detailMain__info--btn'>Add to Cart </button>
                             </Link>

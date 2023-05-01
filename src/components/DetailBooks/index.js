@@ -126,12 +126,8 @@ const DetailBooks = () => {
                             </div>
                             <button className="detail--select__btn">Continue to checkout</button>
                         </div>
-
                     </div>
-
                 ))}
-
-
             </div>
         </div>
     );

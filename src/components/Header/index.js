@@ -21,18 +21,18 @@ const Header = () => {
                         </NavLink>
                         <div className="header--nav">
 
-                        <NavLink to={"/genres"}>
-                            Categories
-                        </NavLink>
-                        <NavLink to={"/recent"}>
-                            Recent</NavLink>
-                        <NavLink to={"/books"}>
-                            Books
+                            <NavLink to={"/genres"}>
+                                Categories
+                            </NavLink>
+                            <NavLink to={"/recent"}>
+                                Recent</NavLink>
+                            <NavLink to={"/books"}>
+                                Books
 
-                        </NavLink>
-                        <NavLink to={"/aboutUs"}>
-                            About Us
-                        </NavLink>
+                            </NavLink>
+                            <NavLink to={"/aboutUs"}>
+                                About Us
+                            </NavLink>
                         </div>
                     </div>
                     <nav className="header--search">
@@ -64,15 +64,7 @@ const Header = () => {
     );
 };
 
-export default Header;
-                    <NavLink to={"/DetailBooks"}>
-                        <RiShoppingBagLine className="header--title__bag"/>
-                    </NavLink>
-                </div>
-            </div>
-        </div>
-    );
-};
+
 
 export default Header;
 
