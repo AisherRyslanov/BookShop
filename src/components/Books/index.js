@@ -4,24 +4,18 @@ import Slider from "react-slick"
 import {Link} from "react-router-dom";
 import axios from "axios";
 
+const API_KEY = 'AIzaSyBR4V4Yo1z_nl5BN_Bzb7naT-Hp24-zIBQ';
 const Books = () => {
 
     const [books, setBooks] = useState([])
 
-    const getBooks = async () => {
-        try {
-            const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=code+complete`)
-            const {data} = await response
-            setBooks(data.items)
-
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
     useEffect(() => {
-        getBooks()
-    }, [])
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=search+terms&startIndex=0&maxResults=10&key=${API_KEY}`)
+            .then(response => {
+                setBooks(response.data.items);
+            })
+            .catch(error => console.error(error));
+    }, []);
 
     const settings = {
         dots: true,
@@ -50,15 +44,32 @@ const Books = () => {
                 </div>
                 <div className="books__anyBooks">
                     <Slider {...settings}>
-                        {books.map((item) => (
-                            <>
-                            <Link to={`/DetailPage/${item.id}`} key={item.id}>
-                                <img src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
-                            </Link>
-                            <h2>{item.volumeInfo.title}</h2>
-                            <p>{item.volumeInfo.authors}</p>
-                            </>
-                        ))}
+                        {/*{books.map((item) => (*/}
+                        {/*    <>*/}
+                        {/*    <Link to={`/DetailPage/${item.id}`} key={item.id}>*/}
+                        {/*        <img src={item.volumeInfo.imageLinks.thumbnail} alt=""/>*/}
+                        {/*    </Link>*/}
+                        {/*    <h2>{item.volumeInfo.title}</h2>*/}
+                        {/*    <p>{item.volumeInfo.authors}</p>*/}
+                        {/*    </>*/}
+                        {/*))}*/}
+
+                            {books.map(book => (
+                                <div key={book.id}>
+                                    <Link to={`/DetailPage/${book.id}`}>
+                                        <img
+                                            src={
+                                                book.volumeInfo.imageLinks
+                                                    ? book.volumeInfo.imageLinks.thumbnail
+                                                    : 'https://via.placeholder.com/150x200?text=No+Image'
+                                            }
+                                            alt={book.volumeInfo.title}
+                                        />
+                                    </Link>
+                                    <h2>{book.volumeInfo.title}</h2>
+                                    <p>{book.volumeInfo.authors}</p>
+                                </div>
+                            ))}
                     </Slider>
                 </div>
             </div>
