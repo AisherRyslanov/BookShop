@@ -3,28 +3,29 @@ import './style.scss'
 import {Link, NavLink} from "react-router-dom";
 import {HiOutlineArrowSmDown} from "react-icons/hi";
 import axios from "axios";
+import Checkbox from '../../img/Checkbox Off.png'
+import Blue from '../../img/i.webp'
 import Slider from "react-slick";
 import {GoSettings} from "react-icons/go";
+// import {APIKEY} from '../../APIKEY'
 
-const BooksPage = async () => {
+const API_KEY = 'AIzaSyBR4V4Yo1z_nl5BN_Bzb7naT-Hp24-zIBQ';
 
+const BooksPage = () => {
     const [books, setBooks] = useState([])
+    const [imageSrc, setImageSrc] = useState({Checkbox});
 
-    const getBooks = async () => {
-        try {
-            const response = await axios.get(`https://books9.p.rapidapi.com/authors/8418015/works`)
-            const {data} = await response
-            setBooks(data.items)
-
-        } catch (error) {
-            console.log(error)
-        }
+    function handleClick() {
+        setImageSrc({Blue});
     }
 
     useEffect(() => {
-        getBooks()
-    }, [])
-
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=search+terms&startIndex=0&maxResults=10&key=${API_KEY}`)
+            .then(response => {
+                setBooks(response.data.items);
+            })
+            .catch(error => console.error(error));
+    }, []);
 
 
     const settings = {
@@ -81,7 +82,8 @@ const BooksPage = async () => {
                 </div>
                 <div className="booksPage__fourth">
                     <div className="booksPage__fourth--blok">
-                        <input type="checkbox"/>
+                        {/*<input type="checkbox"/>*/}
+                        {/*<img src={imageSrc} onClick={handleClick}  alt=""/>*/}
                         <h3>Autographed Books</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
@@ -131,16 +133,24 @@ const BooksPage = async () => {
 
                 </div>
                 <div className="booksPage__fifth">
-
-                    {books.map((item) => (
-                        <div key={item.id}>
-                            <Link to={`/DetailPage/${item.id}`}>
-                                <img src={item.volumeInfo.imageLinks.thumbnail} alt=""/>
-                            </Link>
-                            <h2>{item.volumeInfo.title}</h2>
-                            <p>{item.volumeInfo.authors}</p>
-                        </div>
-                    ))}
+                    <div>
+                        {books.map(book => (
+                            <div key={book.id}>
+                                <Link to={`/DetailPage/${book.id}`}>
+                                    <img
+                                        src={
+                                            book.volumeInfo.imageLinks
+                                                ? book.volumeInfo.imageLinks.thumbnail
+                                                : 'https://via.placeholder.com/150x200?text=No+Image'
+                                        }
+                                        alt={book.volumeInfo.title}
+                                    />
+                                </Link>
+                                <h2>{book.volumeInfo.title}</h2>
+                                <p>{book.volumeInfo.authors}</p>
+                            </div>
+                        ))}
+                    </div>
 
                 </div>
 

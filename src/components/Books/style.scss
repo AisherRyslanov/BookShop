@@ -184,8 +184,8 @@
   }
 
   .slick-slide img {
-    //max-height: 200px;
-    //display: block;
+    max-height: 200px;
+    display: block;
   }
 
   .slick-slide h2 {
@@ -206,8 +206,8 @@
     padding: 0 25px;
   }
   img{
-    //width: 100px;
-    //height: 100px;
+    width: 100px;
+    height: 100px;
   }
   .slick-list{
     margin-left: 20px;
@@ -245,8 +245,8 @@
   }
 
   .slick-slide img {
-    //max-height: 150px;
-    //gap: 20px;
+    max-height: 150px;
+    gap: 20px;
   }
 
   .slick-slide h2 {
@@ -261,6 +261,8 @@
     bottom: -20px;
   }
 }
+
+
 @media (max-width: 1440px) {
 
 }
@@ -325,6 +327,6 @@
   .books__anyBooks {
     padding: 80px 55px;
   }
-
 }
+
 
