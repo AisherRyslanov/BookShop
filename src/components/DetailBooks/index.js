@@ -9,9 +9,9 @@ const DetailBooks = () => {
     const [remove, setRemove] = useState(false)
     const [books, setBooks] = useState([])
     const [select, setSelect] = useState(false)
-    // const [count, setCount] = useState(0);
-    // const [price, setPrice] = useState(0)
-    // const [quantity , setQuantity] = useState(1)
+    const [count, setCount] = useState(0);
+    const [price, setPrice] = useState(0)
+    const [quantity , setQuantity] = useState(1)
 
 
     const getBooks = async () => {
@@ -28,12 +28,12 @@ const DetailBooks = () => {
     useEffect(() => {
         getBooks()
     }, [])
- // const increment = (setCount,setPrice) =>{
- //     setQuantity(quantity +1)
- // }
- // const decrement = (setCount,setPrice) =>{
- //     setQuantity(quantity -1)
- // }
+ const increment = (setCount,setPrice) =>{
+     setQuantity(quantity +1)
+ }
+ const decrement = (setCount,setPrice) =>{
+     setQuantity(quantity -1)
+ }
 
     return (
         <div id='detail'>
