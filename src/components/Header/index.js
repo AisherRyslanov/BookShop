@@ -20,7 +20,7 @@ const Header = () => {
                             <NavLink className='fz' to={'/genres'}>
                                 Categories
                             </NavLink>
-                            <NavLink to={'/recent'}>
+                            <NavLink to={'/NewBooks'}>
                                 Recent
                             </NavLink>
                             <NavLink to={'/books'}>
