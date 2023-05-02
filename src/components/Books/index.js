@@ -4,7 +4,8 @@ import Slider from "react-slick"
 import {Link} from "react-router-dom";
 import axios from "axios";
 
-const API_KEY = 'AIzaSyBR4V4Yo1z_nl5BN_Bzb7naT-Hp24-zIBQ';
+const API_KEY = 'AIzaSyD1z1aKy9_iFzifYabztZePoe4Z-OsPU0Q'
+
 const Books = () => {
 
     const [books, setBooks] = useState([])
