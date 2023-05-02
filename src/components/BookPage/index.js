@@ -4,28 +4,29 @@ import {Link, NavLink} from "react-router-dom";
 import {HiOutlineArrowSmDown} from "react-icons/hi";
 import axios from "axios";
 import Checkbox from '../../img/Checkbox Off.png'
-import Blue from '../../img/i.webp'
+import Blue from '../../img/Blueue.png'
 import Slider from "react-slick";
 import {GoSettings} from "react-icons/go";
-// import {APIKEY} from '../../APIKEY'
 
-const API_KEY = 'AIzaSyBR4V4Yo1z_nl5BN_Bzb7naT-Hp24-zIBQ';
+const API_KEY = 'AIzaSyD1z1aKy9_iFzifYabztZePoe4Z-OsPU0Q'
 
 const BooksPage = () => {
     const [books, setBooks] = useState([])
     const [imageSrc, setImageSrc] = useState({Checkbox});
 
+
     function handleClick() {
         setImageSrc({Blue});
     }
 
+    const [sum,setSum] = useState('popular')
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=search+terms&startIndex=0&maxResults=10&key=${API_KEY}`)
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${sum}&search+terms&startIndex=0&maxResults=10&key=${API_KEY}`)
             .then(response => {
                 setBooks(response.data.items);
             })
             .catch(error => console.error(error));
-    }, []);
+    }, [sum]);
 
 
     const settings = {
@@ -42,9 +43,7 @@ const BooksPage = () => {
             console.log("after change", currentSlide);
         }
     }
-
     const [isOpen, setIsOpen] = useState(false);
-
     const toggleBlock = () => {
         setIsOpen(!isOpen);
     };
@@ -52,6 +51,9 @@ const BooksPage = () => {
         setIsOpen(false);
     };
 
+    const getBook = (e) => {
+        setSum(e.target.value);
+    };
     return (
         <div className='container'>
             <div className='booksPage'>
@@ -61,10 +63,18 @@ const BooksPage = () => {
                 </div>
                 <div className="booksPage__second">
                     <div className="booksPage__second--main">
-                        <select>
-                            <option value="">Sort By <span>Popular</span> <HiOutlineArrowSmDown/></option>
-                            <option value="">new</option>
-                            <option value="">old</option>
+                        <select value={sum} className='select' onChange={getBook}>
+                            <option value='pop'>Popular</option>
+                            <option value='чингиз'>Чингиз Айтматов</option>
+                            <option value="art">Art</option>
+                            <option value="biography">Biography</option>
+                            <option value="fiction">Fiction</option>
+                            <option value="history">History</option>
+                            <option value="humor">Humor</option>
+                            <option value="poetry">Poetry</option>
+                            <option value="science">Science</option>
+                            <option value="self-help">Self-Help</option>
+                            <option value="travel">Travel</option>
                         </select>
                         <button onClick={() => {
                             toggleBlock()
@@ -82,8 +92,7 @@ const BooksPage = () => {
                 </div>
                 <div className="booksPage__fourth">
                     <div className="booksPage__fourth--blok">
-                        {/*<input type="checkbox"/>*/}
-                        {/*<img src={imageSrc} onClick={handleClick}  alt=""/>*/}
+                        <input type="checkbox"/>
                         <h3>Autographed Books</h3>
                     </div>
                     <div className="booksPage__fourth--blok">
@@ -133,7 +142,6 @@ const BooksPage = () => {
 
                 </div>
                 <div className="booksPage__fifth">
-                    <div>
                         {books.map(book => (
                             <div key={book.id}>
                                 <Link to={`/DetailPage/${book.id}`}>
@@ -150,7 +158,6 @@ const BooksPage = () => {
                                 <p>{book.volumeInfo.authors}</p>
                             </div>
                         ))}
-                    </div>
 
                 </div>
 
