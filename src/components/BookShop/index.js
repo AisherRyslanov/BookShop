@@ -2,6 +2,7 @@ import React from "react";
 import "./style.scss"
 
 const BookShop = () => {
+
     return (
         <>
             <div id="book">
@@ -15,7 +16,6 @@ const BookShop = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </>
 
