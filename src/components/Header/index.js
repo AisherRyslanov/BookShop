@@ -51,7 +51,7 @@ const Header = () => {
                                 text='text'
                             />
                         </div>
-                        <NavLink to={'/DetailBooks'}>
+                        <NavLink to={"/DetailBooks/:id"}>
                             <RiShoppingBagLine className='header--title__bag' />
                         </NavLink>
                     </nav>
