@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import './style.scss'
-import Slider from "react-slick"
 import {Link} from "react-router-dom";
 import axios from "axios";
 
@@ -18,21 +17,6 @@ const Books = () => {
             .catch(error => console.error(error));
     }, []);
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 3,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2
-                }
-            }
-        ]
-    };
 
 
 
@@ -44,34 +28,22 @@ const Books = () => {
                     <Link to="/BookPage" className='books__view'>View all</Link>
                 </div>
                 <div className="books__anyBooks">
-                    <Slider {...settings}>
-                        {/*{books.map((item) => (*/}
-                        {/*    <>*/}
-                        {/*    <Link to={`/DetailPage/${item.id}`} key={item.id}>*/}
-                        {/*        <img src={item.volumeInfo.imageLinks.thumbnail} alt=""/>*/}
-                        {/*    </Link>*/}
-                        {/*    <h2>{item.volumeInfo.title}</h2>*/}
-                        {/*    <p>{item.volumeInfo.authors}</p>*/}
-                        {/*    </>*/}
-                        {/*))}*/}
-
-                            {books.map(book => (
-                                <div key={book.id}>
-                                    <Link to={`/DetailPage/${book.id}`}>
-                                        <img
-                                            src={
-                                                book.volumeInfo.imageLinks
-                                                    ? book.volumeInfo.imageLinks.thumbnail
-                                                    : 'https://via.placeholder.com/150x200?text=No+Image'
-                                            }
-                                            alt={book.volumeInfo.title}
-                                        />
-                                    </Link>
-                                    <h2>{book.volumeInfo.title}</h2>
-                                    <p>{book.volumeInfo.authors}</p>
-                                </div>
-                            ))}
-                    </Slider>
+                    {books.map(book => (
+                        <div className='book' key={book.id}>
+                            <Link to={`/DetailPage/${book.id}`}>
+                                <img
+                                    src={
+                                    book.volumeInfo.imageLinks
+                                        ? book.volumeInfo.imageLinks.thumbnail
+                                        : 'https://via.placeholder.com/150x200?text=No+Image'
+                                }
+                                    alt={book.volumeInfo.title}
+                                />
+                            </Link>
+                            <h2>{book.volumeInfo.title}</h2>
+                            <p>{book.volumeInfo.authors}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

@@ -59,15 +59,9 @@ const Genres = () => {
                                 <h1>Finance</h1>
                             </div>
                         </div>
-
-
-
                     </div>
-
                 </div>
-
             </div>
-
         </>
     );
 };
