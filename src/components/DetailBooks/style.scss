@@ -1,14 +1,14 @@
 #detail {
   padding-top: 50px;
 
-  .description {
-    h1 {
-      padding: 17% 0;
-      font-size: 58px;
-      color: #818EEA;
-      font-weight: 700;
-    }
-  }
+  //.description {
+  //  h1 {
+  //    padding: 17% 0;
+  //    font-size: 58px;
+  //    color: #818EEA;
+  //    font-weight: 700;
+  //  }
+  //}
 
   .yourCart {
     h1 {
@@ -36,23 +36,35 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
+    //flex-wrap: wrap;
 
     &--wrap {
-      width: 50%;
 
-      &__block{
+
+      &__block {
         display: flex;
-        align-items: start;
+        align-items: flex-start;
         justify-content: space-between;
-        padding: 20px 0;
 
+
+        img {
+          width: 170px;
+        }
+
+        &__one {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 20px 0;
         &--content {
+          margin-left: 13px;
+
           &__texty {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
 
-            h1 {
+            h2 {
               text-transform: uppercase;
               font-weight: 700;
               font-size: 16px;
@@ -61,14 +73,7 @@
               line-height: 1.5;
             }
 
-            &__remove {
-              color: #FF0000;
-              cursor: pointer;
-              text-decoration: underline;
-              border: none;
-              background: transparent;
-              padding-left: 25px;
-            }
+
           }
 
           h4 {
@@ -97,8 +102,20 @@
           }
 
         }
-      }
 
+
+      }
+    }
+
+      &__remove {
+        margin-top: 26px;
+        color: #FF0000;
+        cursor: pointer;
+        text-decoration: underline;
+        border: none;
+        background: transparent;
+        padding-left: 25px;
+      }
     }
 
     &--select {
@@ -122,7 +139,8 @@
           color: #0D0D0D;
           padding: 17px 0;
         }
-        &--send{
+
+        &--send {
           background: #19272E;
           border-radius: 8px;
           border: none;
@@ -135,27 +153,31 @@
           height: 50px;
           margin: 10px 0;
           transition: 0.4s;
+
           &:hover {
             background: #818EEA;
             color: yellow;
           }
         }
 
-        details{
-          border-bottom: 2px solid  #19272E;
+        details {
+          border-bottom: 2px solid #19272E;
           cursor: pointer;
           width: 100%;
-          &{
-            select{
+
+          & {
+            select {
               padding: 5px 10px;
               outline: none;
               border: 2px solid #818EEA;
               font-family: sans-serif;
-              option{
+
+              option {
                 outline: none;
               }
             }
-            input{
+
+            input {
               border: 2px solid #818EEA;
               border-radius: 5px;
               width: 100%;
@@ -167,12 +189,13 @@
 
           }
 
-          summary{
+          summary {
             display: flex;
             align-items: center;
             justify-content: space-between;
           }
         }
+
         h5 {
           font-weight: 400;
           font-size: 17px;
@@ -180,6 +203,7 @@
           display: flex;
           align-items: center;
         }
+
         //
         //select {
         //  font-weight: 400;

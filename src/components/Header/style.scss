@@ -70,8 +70,14 @@
 }
   .mobile_btn {
     display: none;
+    cursor: pointer;
   }
 
+  @media (max-width: 1140px) {
+    .container{
+      width: 90%;
+    }
+  }
 @media (max-width: 800px) {
   .mobile_btn {
     display: block;

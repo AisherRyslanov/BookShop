@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './style.scss'
 import axios from "axios";
-import {useParams} from "react-router";
+import {useNavigate, useParams} from "react-router";
 import {AiOutlineHeart, AiOutlinePlus} from "react-icons/ai";
 import {HiOutlineShare} from "react-icons/hi";
 import {Link} from "react-router-dom";
@@ -11,10 +11,10 @@ import {BsTelegram} from "react-icons/bs";
 
 
 const API_KEY = 'AIzaSyD1z1aKy9_iFzifYabztZePoe4Z-OsPU0Q'
-const DetailPage = () => {
+const DetailPage = ({count,setCount, price ,setPrice}) => {
     const [books, setBooks] = useState([])
-    const [count, setCount] = useState(1);
-    const [price, setPrice] = useState(99)
+    // const [count, setCount] = useState(1);
+    // const [price, setPrice] = useState(99)
     const [isOpen, setIsOpen] = useState(false);
     const [showBlock, setShowBlock] = useState(false);
 
@@ -24,7 +24,9 @@ const DetailPage = () => {
     };
 
     const {id} = useParams();
+    const navigate = useNavigate()
     const [book, setBook] = useState(null);
+    console.log(book)
 
     useEffect(() => {
         axios.get(`https://www.googleapis.com/books/v1/volumes/${id}?key=${API_KEY}`)
@@ -33,7 +35,6 @@ const DetailPage = () => {
             })
             .catch(error => console.error(error));
     }, [id]);
-
     if (!book) {
         return <div>Loading...</div>;
     }
@@ -49,7 +50,6 @@ const DetailPage = () => {
     };
 
 
-
     const handleOpenModal = () => {
         setIsOpen(true);
     };
@@ -58,11 +58,17 @@ const DetailPage = () => {
         setIsOpen(false);
     };
 
+    function navigateToBasket(id) {
+        window.scrollTo(0, 0)
+            navigate(`/detailBooks/${id}`)
+    }
+
 
     return (
         <div>
             {/*{books.map(book => (*/}
             <div className="detailMain" key={book.id}>
+
                 <img className="detailMain__img"
                      src={
                          book.volumeInfo.imageLinks
@@ -105,12 +111,16 @@ const DetailPage = () => {
                     {/*<button onClick={() => getBookPrice(book.id)}>Get Price</button>*/}
                     {/*{bookPrice && <p>Price: {bookPrice}</p>}*/}
                     <p className="detailMain__info--price">$ {price}</p>
-                    <div className="">
-                        <Link to="/DetailBooks">
-                            <button className='detailMain__info--btn' onClick={handleClick}>Add to Cart
-                                {showBlock && <DetailBooks />}
-                            </button>
-                        </Link>
+                    <div style={{
+                        display:"flex",
+                        alignItems:"center",
+                        justifyContent:"space-between",
+                        width:"83%"
+                    }}>
+
+                        <button className='detailMain__info--btn' onClick={() => navigateToBasket(book?.id)}>Add to
+                            Cart
+                        </button>
                         <div className="detailMain__info--count">
                             <button onClick={decrementCount}>-</button>
                             <p>{count}</p>

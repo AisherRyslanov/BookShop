@@ -10,8 +10,11 @@ import Genres from "./components/Genres";
 import NewBooks from "./components/NewBooks";
 import Books from "./components/Books";
 import AboutUs from "./components/AboutUs";
+import {useState} from "react";
 
 function App() {
+    const [count, setCount] = useState(1);
+    const [price, setPrice] = useState(99)
   return (
     <div className="App">
         <Header/>
@@ -22,10 +25,9 @@ function App() {
             <Route path={"/NewBooks"} element={<NewBooks/>} />
             <Route path={"/books"} element={<Books/>}/>
             <Route path={"/aboutUs"} element={<AboutUs/>}/>
-
             <Route path="/BookPage" element={<BookPage/>} />
-            <Route path="/DetailPage/:id" element={<DetailPage/>} />
-            <Route path="/DetailBooks" element={<DetailBooks/>} />
+            <Route path="/DetailPage/:id" element={<DetailPage count={count} setCount={setCount} price={price} setPrice={setPrice}/>} />
+            <Route path={"/DetailBooks/:id"} element={<DetailBooks count={count} setCount={setCount} price={price} setPrice={setPrice}/>} />
         </Routes>
         <Footer/>
     </div>
