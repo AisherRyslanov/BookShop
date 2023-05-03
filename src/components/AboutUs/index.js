@@ -9,7 +9,7 @@ const AboutUs = () => {
                 <h1 className="about">About Us</h1>
                 <div className="aboutUs">
                     <div className="aboutUs--photo">
-                        <img width="100%" className="aboutUs--photo__img" src={About} alt=""/>
+                        <img className="aboutUs--photo__img" src={About} alt=""/>
                     </div>
                     <div className="aboutUs--desc">
                         <p>We believe that books have the power to change lives, and we're dedicated to helping our
