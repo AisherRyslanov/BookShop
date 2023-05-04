@@ -23,6 +23,7 @@ const DetailPage = ({count,setCount, price ,setPrice}) => {
         setShowBlock(!showBlock);
     };
 
+
     const {id} = useParams();
     const navigate = useNavigate()
     const [book, setBook] = useState(null);
@@ -35,6 +36,7 @@ const DetailPage = ({count,setCount, price ,setPrice}) => {
             })
             .catch(error => console.error(error));
     }, [id]);
+
     if (!book) {
         return <div>Loading...</div>;
     }
@@ -83,9 +85,9 @@ const DetailPage = ({count,setCount, price ,setPrice}) => {
                         <a href="/DetailBooks">
                             <AiOutlineHeart size={"2rem"} className="heartIcon"/>
                         </a>
-                        <button onClick={handleOpenModal}>
+                        <p onClick={handleOpenModal}>
                             <HiOutlineShare size={"2rem"} className="shateIcon"/>
-                        </button>
+                        </p>
                         <Modal isOpen={isOpen} onClose={handleCloseModal}>
                             <h2>Поделится книгой</h2>
                             <img className="detailMain__img"

@@ -9,6 +9,7 @@ const Header = () => {
     const [search, setSearch] = useState(true);
     const [nav, setNav] = useState(false);
     return (
+
         <div id='header'>
             <div className='container'>
                 <div className='header'>
