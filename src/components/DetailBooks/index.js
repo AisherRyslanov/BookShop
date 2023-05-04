@@ -76,81 +76,13 @@ const DetailBooks = ({count, price}) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div className='hr'>
                                     <button className="detail--wrap__remove" style={{display: remove ? "none" : "flex"}}
                                             onClick={() => setRemove(true)}>Remove
                                     </button>
                                 </div>
                             </div>
                             <hr/>
-                            {/*<div className="detail--wrap__block">*/}
-                            {/*    <div className="detail--wrap__block__one" style={{display: remove ? 'none' : ''}}>*/}
-                            {/*        <img*/}
-                            {/*            src={*/}
-                            {/*                books?.volumeInfo?.imageLinks*/}
-                            {/*                    ? books?.volumeInfo?.imageLinks?.thumbnail*/}
-                            {/*                    : 'https://via.placeholder.com/150x200?text=No+Image'*/}
-                            {/*            }*/}
-                            {/*            alt={books?.volumeInfo?.title}*/}
-                            {/*        />*/}
-
-                            {/*        <div className="detail--wrap__block__one--content">*/}
-                            {/*            <div className="detail--wrap__block__one--content__texty">*/}
-                            {/*                <h2 style={{*/}
-                            {/*                    fontSize: "22px"*/}
-                            {/*                }}>{books?.volumeInfo?.title}</h2>*/}
-
-                            {/*            </div>*/}
-                            {/*            <p style={{*/}
-                            {/*                paddingTop: "10px"*/}
-                            {/*            }}>{books?.volumeInfo?.authors}</p>*/}
-                            {/*            <div className='detail--wrap__block__one--content__quantity'>*/}
-                            {/*                <h3>Quantity: 1</h3>*/}
-                            {/*                <h4>$99</h4>*/}
-                            {/*            </div>*/}
-                            {/*        </div>*/}
-                            {/*    </div>*/}
-                            {/*    <div>*/}
-                            {/*        <button className="detail--wrap__remove"*/}
-                            {/*                onClick={() => setRemove(true)}>Remove*/}
-                            {/*        </button>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-                            {/*<hr/>*/}
-                            {/*<div className="detail--wrap__block">*/}
-                            {/*    <div className="detail--wrap__block__one" style={{display: remove ? 'none' : ''}}>*/}
-                            {/*        <img*/}
-                            {/*            src={*/}
-                            {/*                books?.volumeInfo?.imageLinks*/}
-                            {/*                    ? books?.volumeInfo?.imageLinks?.thumbnail*/}
-                            {/*                    : 'https://via.placeholder.com/150x200?text=No+Image'*/}
-                            {/*            }*/}
-                            {/*            alt={books?.volumeInfo?.title}*/}
-                            {/*        />*/}
-
-                            {/*        <div className="detail--wrap__block__one--content">*/}
-                            {/*            <div className="detail--wrap__block__one--content__texty">*/}
-                            {/*                <h2 style={{*/}
-                            {/*                    fontSize: "22px"*/}
-                            {/*                }}>{books?.volumeInfo?.title}</h2>*/}
-
-                            {/*            </div>*/}
-                            {/*            <p style={{*/}
-                            {/*                paddingTop: "10px"*/}
-                            {/*            }}>{books?.volumeInfo?.authors}</p>*/}
-                            {/*            <div className='detail--wrap__block__one--content__quantity'>*/}
-                            {/*                <h3>Quantity: 1</h3>*/}
-                            {/*                <h4>$99</h4>*/}
-                            {/*            </div>*/}
-                            {/*        </div>*/}
-                            {/*    </div>*/}
-                            {/*    <div>*/}
-                            {/*        <button className="detail--wrap__remove"*/}
-                            {/*                onClick={() => setRemove(true)}>Remove*/}
-                            {/*        </button>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-                            {/*<hr/>*/}
                         </div>
 
                         <div className="detail--select">

@@ -50,7 +50,7 @@
               width: 200px;
 
               &__texty {
-                width: 410px;
+                width: 200px;
 
                 &__remove {
                   font-size: 12px;
@@ -62,9 +62,6 @@
 
         }
 
-        &__remove {
-          padding-left: 115px;
-        }
       }
 
       &--select {
@@ -111,7 +108,17 @@
             width: 154px;
           }
         }
+        &__remove {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+        }
       }
+    }
+    .hr{
+      position: relative;
+      top: 200px;
+      right: 80px;
     }
   }
 }
@@ -130,6 +137,7 @@
           &__one {
             &--content {
               &__texty {
+                width: 150px;
                 h1 {
                   font-size: 13px;
                 }
@@ -141,6 +149,9 @@
             }
           }
 
+        }
+        &__remove {
+          padding: 0 0  40px;
         }
 
       }
@@ -223,7 +234,7 @@
         &__block {
           &--content {
             &__texty {
-              width: 180px;
+              width: 150px;
 
               h1 {
                 font-size: 13px;
