@@ -320,14 +320,17 @@
   .booksPage__second--set{
     display: block;
   }
+  .booksPage__first h1 {
+    font-size: 32px;
+  }
+  .booksPage__second--main {
+    margin-right: -40px;
+  }
 }
 @media (max-width: 450px) {
   .booksPage__filters--btn {
     width: 450px;
     margin: 50px 0;
-  }
-  .booksPage__second--main {
-    margin-right: -150px;
   }
   .booksPage__filters .block {
     height: 600px;
@@ -351,23 +354,25 @@
   .booksPage__fifth {
     padding: 0 125px;
   }
+  .booksPage__first h1 {
+    font-size: 26px;
+  }
+  .booksPage__second--main {
+    margin-right: -34px;
+  }
+  .booksPage__second--main select {
+    width: 110px;
+  }
 
 }
 @media (max-width: 400px) {
+  .booksPage__fifth {
+    padding: 0;
+  }
   .booksPage__second button {
     width: 45px;
     height: 45px;
     font-size: 20px;
-  }
-  .booksPage__second--main select {
-    width: 160px;
-    height: 45px;
-  }
-  .booksPage__second--main {
-    margin-right: -195px;
-  }
-  .booksPage__first h1 {
-    font-size: 40px;
   }
   .booksPage__filters--title {
     padding: 20px 0;
@@ -448,7 +453,9 @@
   }
 }
 @media (max-width: 380px) {
-
+  .booksPage__first h1 {
+    margin: 0 -30px;
+  }
   .booksPage__filters .block {
     height: 675px;
     width: 550px;
@@ -459,13 +466,11 @@
   }
 }
 @media (max-width: 320px) {
-  .booksPage__second--main {
-    margin-right: -222px;
-  }
   .booksPage__first h1 {
-    font-size: 35px;
-    width: 162px;
-    margin-left: -145px;
+    margin: 0 -170px;
+  }
+  .booksPage__second--main select {
+    width: 70px;
   }
   .booksPage__filters--title h2 {
     font-size: 70px;
