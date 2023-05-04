@@ -118,12 +118,14 @@
 }
 @media (max-width: 768px) {
   .detailMain__img {
-    width: 250px;
-    height: 350px;
-    margin-left: 70px;
+    margin-left: -65px;
+  }
+  .detailMain__info {
+    margin-left: 100px;
   }
   .detailMain__info--count {
-    margin: 30px -115px;
+    margin: 30px -20px;
+    width: 110px;
   }
   .detailMain__info--desc {
     width: 400px;
@@ -138,6 +140,16 @@
   }
 }
 @media (max-width: 576px) {
+  .detailMain__info {
+    font-size: 30px;
+    margin: 0;
+  }
+  .detailMain__img {
+    margin-left: -50px;
+  }
+  .detailMain__info--title {
+    margin-left: 0;
+  }
   .booksPage__filters input {
     transform: scale(2);
     float: left;
@@ -149,17 +161,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .detailMain__info--title {
-    font-size: 22px;
-  }
-  .detailMain__info {
-    font-size: 30px;
-  }
-  .detailMain__img {
-    width: 350px;
-    height: 400px;
-    margin-left: 50px;
   }
   .detailMain__info--price {
     font-size: 39px;
@@ -173,10 +174,10 @@
   }
 }
 @media (max-width: 450px) {
-  .detailMain__img {
-    width: 450px;
-    height: 500px;
-    margin-left: 23px;
+  .detailMain__info--title {
+    margin-left: -64px;
+    padding: 0 76px;
+      font-size: 22px;
   }
   .detailMain__info--count {
     .detailMain__info--count {
@@ -196,9 +197,6 @@
       height: 500px;
       margin-left: 50px;
     }
-  }
-  .detailMain__info--title {
-    font-size: 30px;
   }
   .heartIcon {
     width: 100px;
@@ -224,58 +222,47 @@
 }
 @media (max-width: 400px) {
   .detailMain__img {
-    width: 650px;
-    height: 650px;
-    margin-left: 23px;
+    width: 250px;
+    height: 300px;
+    margin-left: -720px;
   }
-  .detailMain__info {
-    font-size: 40px;
-    margin-left: 345px;
+  .detailMain__info--title {
+    //margin-left: -268px;
+    font-size: 10px;
   }
   .detailMain__info--btn {
-    height: 125px;
-    width: 525px;
+    height: 25px;
+    width: 225px;
+    font-size: 22px;
+  }
+  .heartIcon {
+    width: 30px;
   }
   .detailMain__info--count {
-    margin: 50px 150px;
-    width: 165px;
-    height: 115px;
-    font-size: 50px;
+    margin: 50px 270px;
+    width: 95px;
+    height: 45px;
+    font-size: 25px;
+  }
+  .shateIcon {
+    width: 30px;
+  }
+  .detailMain__info--price {
+    font-size: 20px;
+  }
+  .detailMain__info {
+    font-size: 10px;
+    margin-left: 0px;
+  }
+  .detailMain__info--desc {
+    width: 300px;
+  }
+  .detailMain__info--count {
+    display: none;
   }
 }
 @media (max-width: 380px) {
-  .detailMain__img {
-    margin-left: 100px;
-  }
-  .detailMain__info {
-    margin-left: 130px;
-  }
-  .detailMain__info--title {
-    font-size: 32px;
-  }
-  .heartIcon {
-    width: 165px;
-    height: 95px;
-  }
-  .shateIcon {
-    width: 165px;
-    height: 95px;
-  }
-  .detailMain__info--price {
-    font-size: 85px;
-  }
-  .detailMain__info--btn {
-    height: 150px;
-    font-size: 60px;
-    width: 600px;
-  }
-  .detailMain__info--count {
-    height: 160px;
-    font-size: 65px;
-    width: 200px;
-    margin-right: 90px;
-    margin-top: -190px;
-  }
+
 }
 @media (max-width: 375px) {
 
@@ -284,19 +271,5 @@
 
 }
 @media (max-width: 320px) {
-  .detailMain__info--title {
-    font-size: 45px;
-    margin-right: 150px;
-  }
-  .detailMain__info {
-    font-size: 75px;
-    margin-left: 370px;
-  }
-  .detailMain__info--count {
-    height: 190px;
-    font-size: 75px;
-    width: 155px;
-    margin-right: 80px;
-    margin-top: 25px;
-  }
+
 }
